@@ -7804,7 +7804,7 @@ footer .col-9 ul li a {
 }
 
 .pc_block {
-  display: contents;
+  display: block;
 }
 
 .mob_block {
