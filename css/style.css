@@ -7061,6 +7061,7 @@ main {
 }
 
 .servise .container .col-5 {
+  overflow: hidden;
   position: relative;
   padding: 50px;
   z-index: 1;
@@ -7200,7 +7201,7 @@ main {
   overflow: hidden;
   position: relative;
   height: 490px;
-  width: 490px;
+  width: 100%;
   background: #fff;
 }
 
@@ -7213,8 +7214,8 @@ main {
 
 .map_box .map .gmap_canvas {
   overflow: hidden;
-  height: 490px;
-  width: 490px;
+  height: 100%;
+  width: 100%;
 }
 
 .map_box .map .gmap_canvas iframe {
@@ -13488,6 +13489,96 @@ body::-webkit-scrollbar-button {
 
   .best_auto .col-4 {
     width: 100%;
+  }
+
+  .why_usa {
+    padding-top: 0px;
+  }
+
+  .why_info {
+    padding: 0px;
+  }
+
+  .why_info .col-4 {
+    padding: 0px !important;
+  }
+
+  .why_info h5,
+  .why_info .h5 {
+    margin-bottom: 10px !important;
+  }
+
+  .why_best .col-1 {
+    display: none !important;
+  }
+
+  .consultations .consultations_head {
+    padding: 0px 40px;
+  }
+
+  .consultations .consultations_head h2,
+  .consultations .consultations_head .h2 {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+  }
+
+  .consultations .contact_bt {
+    padding: 20px 60px !important;
+  }
+
+  .reviews {
+    margin-bottom: 0px !important;
+    margin-top: 100px !important;
+  }
+
+  .reviews .col-12 h2,
+  .reviews .col-12 .h2 {
+    font-size: 2rem !important;
+  }
+
+  .reviews .carousel_mob .carousel_block {
+    padding-left: 10px;
+  }
+
+  .reviews .carousel_mob .carousel_block .commment {
+    width: 80vw;
+  }
+
+  .process .text_box {
+    padding-top: 0px !important;
+  }
+
+  .process .text_box h5,
+  .process .text_box .h5 {
+    padding: 20px !important;
+  }
+
+  .servise {
+    margin: 30px 0px !important;
+  }
+
+  .servise .col-7 {
+    padding: 10px !important;
+  }
+
+  .servise .col-5 svg {
+    right: -38px !important;
+  }
+
+  .about_us .about_content {
+    padding: 30px;
+  }
+
+  .contact_bt {
+    padding: 20px 60px !important;
+  }
+
+  .social_telegram .row {
+    height: 80vh !important;
+  }
+
+  .social_telegram button {
+    padding: 10px 50px !important;
   }
 }
 
