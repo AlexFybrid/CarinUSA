@@ -7762,6 +7762,17 @@ footer .col-9 ul li a {
   margin-bottom: 0px !important;
 }
 
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order .commment_mob .rew .name_rew {
+  display: flex;
+  align-items: center;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order .commment_mob .rew .name_rew h6,
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order .commment_mob .rew .name_rew .h6 {
+  padding: 0px 5px;
+  opacity: 0.5;
+}
+
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order .commment_mob .rew .rew_con .block__inner {
   width: 100%;
   padding-top: 100%;
