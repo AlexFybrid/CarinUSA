@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20231116230917"></link>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css?_v=20231116230917" rel="stylesheet"
+  <link rel="stylesheet" href="css/style.min.css?_v=20231116234035"></link>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css?_v=20231116234035" rel="stylesheet"
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js?_v=20231116230917"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js?_v=20231116234035"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js?_v=20231116230917"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js?_v=20231116234035"
   integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
   
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20231116230917" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20231116234035" />
   
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20231116230917"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js?_v=20231116230917"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20231116234035"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js?_v=20231116234035"></script>
     
     <title>Car from USA</title>
 
@@ -1796,32 +1796,29 @@ $(document).ready(function () {
 
   // Сначала определите переменные, необходимые для отслеживания состояния скролла и элемента модального окна
 // const carpopElement_mob = $('#yourCarpopElement'); // Замените на ваш селектор элемента
-  const carpop_mob = $('#Carpop_mob'); // Проверьте, что это правильный селектор для модального окна
+   const carpop_mob = $('#Carpop_mob'); // Проверьте, что это правильный селектор для модального окна
   const modalContent = document.getElementById('modal-content_mob');
-  const hammer = new Hammer(modalContent);
-  hammer.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
-
-  let scrollingStarted = false;
+  const hammer = new Hammer(modalContent, {
+    touchAction: 'pan-y' // Указываем touchAction для вертикального свайпа
+  });
+  hammer.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 
   function isAtTop() {
-    return carpop_mob.scrollTop() === 0; // Проверяем, находится ли прокрутка в самом верхнем положении
+    return carpop_mob.scrollTop() === 0;
   }
 
-  hammer.on('swipedown', function () {
-    if (isAtTop() && scrollingStarted) {
-      $('#Carpop_mob').modal('hide'); // Закрываем модальное окно при свайпе вниз, если прокрутка находится в верхнем положении
+  hammer.on('panstart', function (e) {
+    if (e.additionalEvent === 'pandown' && isAtTop()) {
+      // Вы можете также использовать событие 'swipe' вместо 'pan' для более точного распознавания свайпа
+      $('#Carpop_mob').modal('hide');
     }
   });
 
   carpop_mob.on('scroll', function () {
-    if (!scrollingStarted && carpop_mob.scrollTop() > 1) {
-      scrollingStarted = true;
-    }
-
-    if (!isAtTop() && scrollingStarted) {
-      hammer.get('swipe').set({ enable: false }); // Отключаем свайп, если прокрутка не в верхнем положении
+    if (!isAtTop()) {
+      hammer.get('pan').set({ enable: false });
     } else {
-      hammer.get('swipe').set({ enable: true }); // Включаем свайп, если прокрутка находится в верхнем положении
+      hammer.get('pan').set({ enable: true });
     }
   });
 // // Добавляем обработчик клика, который открывает модальное окно и устанавливает начальную позицию скролла
@@ -1865,7 +1862,7 @@ $(document).ready(function () {
 
 
 </script>
-<script type="module" src="files/script /script.js?_v=20231116230917"></script>
+<script type="module" src="files/script /script.js?_v=20231116234035"></script>
 <footer>
   <div class="container">
     <div class="row">
