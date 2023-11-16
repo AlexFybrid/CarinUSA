@@ -7696,9 +7696,54 @@ footer .col-9 ul li a {
 }
 
 .car_popup_mob .modal-dialog .modal-content {
-  border-radius: 20px 20px 0px 0px !important;
+  border-radius: 35px 35px 0px 0px !important;
   overflow: hidden;
-  padding: 20px 10px;
+  padding: 10px 10px;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .line_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .line_box .line {
+  background-color: #e2e2e2;
+  width: 30vw;
+  height: 5px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_photo {
+  height: 100% !important;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_photo .swiper {
+  border-radius: 20px;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_photo .swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_price .price {
+  width: 100% !important;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_price .price .first_line {
+  width: 100% !important;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_price .price .second_line {
+  width: 100% !important;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_info {
+  margin: 20px 0px;
 }
 
 .pc_block {
