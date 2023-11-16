@@ -7753,7 +7753,7 @@ footer .col-9 ul li a {
 }
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order {
-  padding: 20px 3px;
+  padding: 20px 5px;
   background-color: #F6F6F6;
 }
 
@@ -7804,7 +7804,7 @@ footer .col-9 ul li a {
   padding-top: 100%;
   position: relative;
   margin: 8px 0px;
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
