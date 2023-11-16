@@ -7698,7 +7698,7 @@ footer .col-9 ul li a {
 .car_popup_mob .modal-dialog .modal-content {
   border-radius: 35px 35px 0px 0px !important;
   overflow: hidden;
-  padding: 10px 10px;
+  padding: 10px 0px;
 }
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .line_box {
@@ -7716,6 +7716,7 @@ footer .col-9 ul li a {
 }
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .car_photo {
+  padding: 0px 20px;
   height: 100% !important;
 }
 
@@ -7728,6 +7729,10 @@ footer .col-9 ul li a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_price {
+  padding: 20px 30px;
 }
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .car_price .price {
@@ -7744,6 +7749,16 @@ footer .col-9 ul li a {
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .car_info {
   margin: 20px 0px;
+  padding: 0px 30px;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order {
+  padding: 20px 3px;
+  background-color: #F6F6F6;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order .car_order_header {
+  padding-left: 30px;
 }
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order .commment_mob {
@@ -13239,7 +13254,7 @@ footer .col-9 ul li a {
   }
 
   .best_auto .mob_block {
-    display: contents;
+    display: block;
   }
 
   .best_auto .col-4 {
