@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20231117001239"></link>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css?_v=20231117001239" rel="stylesheet"
+  <link rel="stylesheet" href="css/style.min.css?_v=20231117002024"></link>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css?_v=20231117002024" rel="stylesheet"
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js?_v=20231117001239"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js?_v=20231117002024"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js?_v=20231117001239"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js?_v=20231117002024"
   integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
   
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20231117001239" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20231117002024" />
   
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20231117001239"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js?_v=20231117001239"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20231117002024"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js?_v=20231117002024"></script>
     
     <title>Car from USA</title>
 
@@ -1792,32 +1792,34 @@ $(document).ready(function () {
   container.on('scroll', updateScrollClass);
 
 
-
-    const carpop_mob = document.getElementById('Carpop_mob');
-  const hammer = new Hammer(carpop_mob, {
-    touchAction: 'pan-y'
+  const carpop_mob = $('#Carpop_mob'); // Проверьте, что это правильный селектор для модального окна
+  const modalContent = document.getElementById('modal-content_mob');
+  const hammer = new Hammer(modalContent, {
+    touchAction: 'pan-y' // Указываем Hammer.js реагировать только на pan (перемещение пальцем)
   });
   hammer.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 
   function isAtTop() {
-    return carpop_mob.scrollTop === 0;
+    return carpop_mob.scrollTop() === 0; // Проверяем, находится ли прокрутка в самом верхнем положении
   }
 
   hammer.on('pandown', function (ev) {
     if (isAtTop() && ev.deltaY > 0) {
-      $('#Carpop_mob').modal('hide');
+      ev.preventDefault(); // Предотвращаем действие по умолчанию при свайпе вниз
+      $('#Carpop_mob').modal('hide'); // Закрываем модальное окно при свайпе вниз, если прокрутка находится в верхнем положении
     }
   });
 
-  carpop_mob.addEventListener("touchmove", function (event) {
-    const lastS = carpop_mob.scrollTop;
-    const lastY = event.touches[0].clientY;
-
-    if (lastS === 0 && (lastY - event.touches[0].clientY) < 0 && event.cancelable) {
-      event.preventDefault();
-      event.stopPropagation();
+  carpop_mob.on('scroll', function () {
+    if (!isAtTop()) {
+      hammer.get('pan').set({ enable: false }); // Отключаем pan, если прокрутка не в верхнем положении
+    } else {
+      hammer.get('pan').set({ enable: true }); // Включаем pan, если прокрутка находится в верхнем положении
     }
-  }, { passive: false });
+  });
+
+
+
 
 });
 
@@ -1849,7 +1851,7 @@ $(document).ready(function () {
 
 
 </script>
-<script type="module" src="files/script /script.js?_v=20231117001239"></script>
+<script type="module" src="files/script /script.js?_v=20231117002024"></script>
 <footer>
   <div class="container">
     <div class="row">
