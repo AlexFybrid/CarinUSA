@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20231117151852"></link>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css?_v=20231117151852" rel="stylesheet"
+  <link rel="stylesheet" href="css/style.min.css?_v=20231117153329"></link>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css?_v=20231117153329" rel="stylesheet"
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js?_v=20231117151852"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js?_v=20231117153329"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js?_v=20231117151852"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js?_v=20231117153329"
   integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
   
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20231117151852" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20231117153329" />
   
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20231117151852"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js?_v=20231117151852"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20231117153329"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js?_v=20231117153329"></script> -->
     
     <title>Car from USA</title>
 
@@ -1836,18 +1836,29 @@ modalContent.addEventListener('touchmove', function (e) {
       swiper: swiper,
     },
   });
-  var swipermob = new Swiper(".Swiper_mob", {
+ var swipermob = new Swiper(".Swiper_mob", {
     pagination: {
-    el: ".swiper-pagination",
-  },
+      el: ".swiper-pagination",
+    },
   });
-  document.querySelector('.Swiper_mob').addEventListener('touchstart', function (e) {
-      e.preventDefault();
-    });
 
+  var startY;
+
+  document.querySelector('.Swiper_mob').addEventListener('touchstart', function (e) {
+    startY = e.touches[0].clientY;
+  });
+
+  document.querySelector('.Swiper_mob').addEventListener('touchmove', function (e) {
+    var currentY = e.touches[0].clientY;
+    var distance = currentY - startY;
+
+    if (distance > 0) {
+      e.preventDefault();
+    }
+  });
 
 </script>
-<script type="module" src="files/script /script.js?_v=20231117151852"></script>
+<script type="module" src="files/script /script.js?_v=20231117153329"></script>
 <footer>
   <div class="container">
     <div class="row">
