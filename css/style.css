@@ -7692,13 +7692,33 @@ footer .col-9 ul li a {
 .car_popup_mob .modal-dialog {
   align-items: end !important;
   margin: 0px !important;
-  padding-top: 15vh;
+  display: block;
+}
+
+.car_popup_mob .modal-dialog #swipe_box {
+  position: relative;
+  height: 30vh;
+  width: 100vw;
+  z-index: 10;
+  margin-bottom: -70px;
+  z-index: 10;
 }
 
 .car_popup_mob .modal-dialog .modal-content {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.car_popup_mob .modal-dialog .modal-content .container {
+  padding: 0px !important;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop {
   border-radius: 35px 35px 0px 0px !important;
   overflow: hidden;
   padding: 10px 0px;
+  background-color: #fff;
+  border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
 }
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .line_box {
