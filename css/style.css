@@ -7697,10 +7697,10 @@ footer .col-9 ul li a {
 
 .car_popup_mob .modal-dialog #swipe_box {
   position: relative;
-  height: 75vh;
+  height: 55vh;
   width: 100vw;
   z-index: 10;
-  margin-bottom: -45vh;
+  margin-bottom: -35vh;
   z-index: 10;
 }
 
