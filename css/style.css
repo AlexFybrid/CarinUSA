@@ -13395,8 +13395,8 @@ footer .col-9 ul li a {
   }
 
   .modal.fade .modal-dialog {
-    transition: transform 0.25s cubic-bezier(0.46, 1.18, 0.86, 1.07) !important;
-    transform: translate(0px, 50px) !important;
+    transition: transform 0.3s cubic-bezier(0.46, 1.18, 0.86, 1.07) !important;
+    transform: translate(0px, 500px) !important;
   }
 
   .modal.show .modal-dialog {
