@@ -7716,7 +7716,6 @@ footer .col-9 ul li a {
 .car_popup_mob .modal-dialog .modal-content .car_main_pop {
   border-radius: 35px 35px 0px 0px !important;
   overflow: hidden;
-  padding: 5px;
   margin: 0px 1px;
   background-color: #fff;
   border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
@@ -7727,13 +7726,13 @@ footer .col-9 ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px 0px;
 }
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .line_box .line {
   background-color: #e2e2e2;
   width: 30vw;
   height: 5px;
-  margin-bottom: 15px;
   border-radius: 10px;
 }
 
@@ -7771,22 +7770,35 @@ footer .col-9 ul li a {
   width: 100% !important;
 }
 
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_price button {
+  height: 65px;
+  width: 100% !important;
+  padding: 0px !important;
+  display: flex;
+  justify-content: center !important;
+}
+
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .car_info {
   margin: 20px 0px;
   padding: 0px 30px;
 }
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order {
-  padding: 20px 5px;
+  padding: 20px 10px;
   background-color: #F6F6F6;
 }
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order .car_order_header {
-  padding-left: 30px;
+  padding-left: 20px;
+}
+
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order .car_order_header h2,
+.car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order .car_order_header .h2 {
+  font-size: 1.5rem;
 }
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order .commment_mob {
-  margin: 20px 0px;
+  margin: 30px 0px;
   display: flex;
   align-items: end;
 }
@@ -7803,6 +7815,7 @@ footer .col-9 ul li a {
 }
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .car_order .commment_mob .rew .name_rew {
+  padding-left: 8px;
   margin-bottom: 5px;
   display: flex;
   align-items: center;
