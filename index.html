@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20231117160713"></link>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css?_v=20231117160713" rel="stylesheet"
+  <link rel="stylesheet" href="css/style.min.css?_v=20231117161223"></link>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css?_v=20231117161223" rel="stylesheet"
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js?_v=20231117160713"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js?_v=20231117161223"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js?_v=20231117160713"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js?_v=20231117161223"
   integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
   
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20231117160713" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20231117161223" />
   
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20231117160713"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js?_v=20231117160713"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20231117161223"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js?_v=20231117161223"></script> -->
     
     <title>Car from USA</title>
 
@@ -1838,22 +1838,72 @@ modalContent.addEventListener('touchmove', function (e) {
   });
   var swipermob = new Swiper(".Swiper_mob", {
     pagination: {
-      el: ".swiper-pagination",
-    },
+    el: ".swiper-pagination",
+  },
   });
-
-  var startY;
-
   document.querySelector('.Swiper_mob').addEventListener('touchstart', function (e) {
-    startY = e.touches[0].clientY;
-  });
+      e.preventDefault();
+    });
 
-  document.querySelector('.Swiper_mob').addEventListener('touchmove', function (e) {
-    var currentY = e.touches[0].clientY;
-    var distance = currentY - startY;
+    
 
-    if (distance > 0) {
-      // Выполнить скрытие модального окна при свайпе сверху вниз
-      $('#Carpop_mob').modal('hide');
-    }
-  });
+
+    var startY;
+
+      document.querySelector('.Swiper_mob').addEventListener('touchstart', function (e) {
+        startY = e.touches[0].clientY;
+      });
+
+      document.querySelector('.Swiper_mob').addEventListener('touchmove', function (e) {
+        var currentY = e.touches[0].clientY;
+        var distance = currentY - startY;
+
+        if (distance > 50) { // Произвольное значение для определения свайпа вниз
+          $('#Carpop_mob').modal('hide');
+          e.preventDefault();
+        }
+      });
+
+
+      
+
+</script>
+<script type="module" src="files/script /script.js?_v=20231117161223"></script>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <svg width="414" height="89" viewBox="0 0 414 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M50.0272 35.6718H36.2232C36.1253 34.5296 35.8643 33.4935 35.44 32.5635C35.0321 31.6334 34.461 30.8339 33.7268 30.1649C33.0088 29.4796 32.1359 28.9575 31.1079 28.5985C30.08 28.2232 28.9133 28.0356 27.608 28.0356C25.3236 28.0356 23.3901 28.5903 21.8074 29.6999C20.241 30.8094 19.0498 32.4003 18.234 34.4725C17.4345 36.5448 17.0347 39.0331 17.0347 41.9374C17.0347 45.005 17.4426 47.5749 18.2585 49.6471C19.0906 51.703 20.2899 53.2531 21.8563 54.2974C23.4227 55.3254 25.3073 55.8393 27.5101 55.8393C28.7665 55.8393 29.8923 55.6843 30.8876 55.3743C31.883 55.048 32.7478 54.5829 33.482 53.9792C34.2163 53.3755 34.8118 52.6494 35.2687 51.8009C35.7419 50.9361 36.0601 49.9653 36.2232 48.8884L50.0272 48.9863C49.864 51.1075 49.2685 53.2694 48.2405 55.4722C47.2126 57.6587 45.7522 59.6819 43.8595 61.542C41.983 63.3858 39.6579 64.8707 36.8841 65.9965C34.1102 67.1224 30.8876 67.6853 27.2164 67.6853C22.615 67.6853 18.4869 66.6981 14.8319 64.7238C11.1933 62.7495 8.31339 59.8451 6.19221 56.0107C4.08735 52.1762 3.03492 47.4851 3.03492 41.9374C3.03492 36.3571 4.11183 31.6579 6.26564 27.8398C8.41945 24.0053 11.3238 21.1091 14.9788 19.1511C18.6337 17.1767 22.7129 16.1896 27.2164 16.1896C30.3818 16.1896 33.2944 16.622 35.954 17.4868C38.6136 18.3516 40.9469 19.6161 42.9539 21.2804C44.9609 22.9284 46.5762 24.9598 47.8 27.3747C49.0237 29.7896 49.7661 32.5553 50.0272 35.6718ZM104.76 41.9374C104.76 47.5178 103.675 52.2252 101.505 56.0596C99.3344 59.8777 96.4056 62.774 92.718 64.7483C89.0304 66.7063 84.9186 67.6853 80.3825 67.6853C75.8138 67.6853 71.6857 66.6981 67.9981 64.7238C64.3268 62.7332 61.4061 59.8288 59.236 56.0107C57.0822 52.1762 56.0053 47.4851 56.0053 41.9374C56.0053 36.3571 57.0822 31.6579 59.236 27.8398C61.4061 24.0053 64.3268 21.1091 67.9981 19.1511C71.6857 17.1767 75.8138 16.1896 80.3825 16.1896C84.9186 16.1896 89.0304 17.1767 92.718 19.1511C96.4056 21.1091 99.3344 24.0053 101.505 27.8398C103.675 31.6579 104.76 36.3571 104.76 41.9374ZM90.76 41.9374C90.76 38.9352 90.3602 36.4061 89.5607 34.3501C88.7775 32.2779 87.6108 30.7115 86.0608 29.6509C84.527 28.574 82.6342 28.0356 80.3825 28.0356C78.1308 28.0356 76.2299 28.574 74.6798 29.6509C73.146 30.7115 71.9794 32.2779 71.1799 34.3501C70.3967 36.4061 70.0051 38.9352 70.0051 41.9374C70.0051 44.9397 70.3967 47.477 71.1799 49.5492C71.9794 51.6051 73.146 53.1715 74.6798 54.2484C76.2299 55.309 78.1308 55.8393 80.3825 55.8393C82.6342 55.8393 84.527 55.309 86.0608 54.2484C87.6108 53.1715 88.7775 51.6051 89.5607 49.5492C90.3602 47.477 90.76 44.9397 90.76 41.9374ZM111.056 16.8749H127.993L139.643 45.2661H140.23L151.881 16.8749H168.817V67H155.503V38.0214H155.111L143.951 66.6084H135.923L124.762 37.8256H124.37V67H111.056V16.8749ZM175.267 67V16.8749H196.903C200.623 16.8749 203.878 17.6091 206.668 19.0777C209.458 20.5462 211.628 22.6102 213.179 25.2699C214.729 27.9295 215.504 31.0378 215.504 34.5949C215.504 38.1846 214.704 41.2929 213.105 43.9199C211.522 46.5469 209.295 48.5702 206.423 49.9898C203.568 51.4093 200.231 52.1191 196.413 52.1191H183.49V41.5458H193.672C195.271 41.5458 196.633 41.2685 197.759 40.7137C198.901 40.1426 199.774 39.3349 200.378 38.2906C200.998 37.2464 201.308 36.0145 201.308 34.5949C201.308 33.159 200.998 31.9353 200.378 30.9236C199.774 29.8957 198.901 29.1125 197.759 28.574C196.633 28.0192 195.271 27.7419 193.672 27.7419H188.875V67H175.267ZM227.258 67H212.573L229.118 16.8749H247.719L264.264 67H249.579L238.614 30.6789H238.223L227.258 67ZM224.517 47.2241H252.125V57.4057H224.517V47.2241ZM312.462 16.8749V67H301.106L282.994 40.6647H282.7V67H269.092V16.8749H280.644L298.462 43.1123H298.854V16.8749H312.462ZM332.507 16.8749V67H318.899V16.8749H332.507ZM351.977 67H337.292L353.837 16.8749H372.438L388.984 67H374.299L363.334 30.6789H362.942L351.977 67ZM349.236 47.2241H376.844V57.4057H349.236V47.2241Z"
+            fill="#1B1B1B" />
+          <g clip-path="url(#clip0_308_31)">
+            <rect x="372" y="59.9609" width="37.2197" height="14.3153" transform="rotate(-9.26446 372 59.9609)"
+              fill="#004BAF" />
+            <rect x="374.305" y="74.0898" width="37.2197" height="14.3153" transform="rotate(-9.26446 374.305 74.0898)"
+              fill="#FFD211" />
+          </g>
+          <defs>
+            <clipPath id="clip0_308_31">
+              <rect x="372" y="59.9609" width="37.2197" height="28.6305" rx="8.18015" transform="rotate(-9.26446 372 59.9609)"
+                fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+  
+      </div>
+      <div class="col-9">
+            <ul>
+              <li><a href="#">Головна</a></li>
+              <li><a href="#">Придбані</a></li>
+              <li><a href="#">Чому США</a></li>
+              <li><a href="#">Калькулятор</a></li>
+              <li><a href="#">Чому Ми</a></li>
+              <li><a href="#">Відгуки</a></li>
+              <li><a href="#">Питання</a></li>
+            </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+</html>
