@@ -7716,7 +7716,8 @@ footer .col-9 ul li a {
 .car_popup_mob .modal-dialog .modal-content .car_main_pop {
   border-radius: 35px 35px 0px 0px !important;
   overflow: hidden;
-  padding: 10px 0px;
+  padding: 5px;
+  margin: 0px 1px;
   background-color: #fff;
   border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
 }
