@@ -7702,6 +7702,7 @@ footer .col-9 ul li a {
 }
 
 .car_popup_mob .modal-dialog .modal-content .car_main_pop .line_box {
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
